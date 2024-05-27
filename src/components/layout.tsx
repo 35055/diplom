@@ -1,9 +1,9 @@
-import { AppShell, Burger, Image, NavLink, Text } from "@mantine/core";
+import { AppShell, Burger, Image } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import logo from "../assets/logo.png";
-import { IconHome, IconMicroscope, IconNotes, IconUserSquare } from "@tabler/icons-react";
 import { useState } from "react";
+import NavbarContent from "./app-shell/navbar-content";
 
 const Layout = () => {
   const [opened, { toggle }] = useDisclosure();
@@ -17,6 +17,11 @@ const Layout = () => {
         breakpoint: "sm",
         collapsed: { mobile: !opened },
       }}
+      style={{
+        marginLeft: !closeToggle ? "300px" : "0",
+        transition: "margin-left 500ms",
+        paddingBottom: "100px",
+      }}
     >
       <AppShell.Header>
         <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
@@ -29,44 +34,18 @@ const Layout = () => {
           style={{ cursor: "pointer" }}
         />
       </AppShell.Header>
-
       <AppShell.Navbar
         pt="md"
         style={{
-          width: closeToggle ? "4em" : "20%",
-          overflow: "hidden",
+          width: closeToggle ? "4em" : "300px",
           transition: "width 500ms",
           display: "flex",
           flexDirection: "column",
           rowGap: "20px",
         }}
       >
-        <NavLink
-          to="/"
-          component={Link}
-          label={<Text size="xl">Главная</Text>}
-          leftSection={<IconHome size="2rem" stroke={1.5} />}
-        />
-        <NavLink
-          to="/test"
-          component={Link}
-          label={<Text size="xl">Тесты</Text>}
-          leftSection={<IconNotes size="2rem" stroke={1.5} />}
-        />
-        <NavLink
-          to="/author"
-          component={Link}
-          label={<Text size="xl">Автор</Text>}
-          leftSection={<IconUserSquare size="2rem" stroke={1.5} />}
-        />
-        <NavLink
-          to="/test"
-          component={Link}
-          label={<Text size="xl">Лаборатория</Text>}
-          leftSection={<IconMicroscope size="2rem" stroke={1.5} />}
-        />
+        <NavbarContent />
       </AppShell.Navbar>
-
       <AppShell.Main>
         <Outlet />
       </AppShell.Main>
