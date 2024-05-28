@@ -1,4 +1,4 @@
-import { NavLink, Text } from "@mantine/core";
+import { NavLink, Text, Tooltip } from "@mantine/core";
 import {
   IconChecklist,
   IconHome,
@@ -11,36 +11,41 @@ import { Link } from "react-router-dom";
 const NavbarContent = () => {
   return (
     <>
-      <NavLink
-        to="/"
-        component={Link}
-        label={<Text size="xl">Главная</Text>}
-        leftSection={<IconHome size="2rem" stroke={1.5} />}
-      />
-      <NavLink
-        to="/plan"
-        component={Link}
-        label={<Text size="xl">План</Text>}
-        leftSection={<IconChecklist size="2rem" stroke={1.5} />}
-      />
-      <NavLink
-        to="/test"
-        component={Link}
-        label={<Text size="xl">Тесты</Text>}
-        leftSection={<IconNotes size="2rem" stroke={1.5} />}
-      />
-      <NavLink
-        to="/author"
-        component={Link}
-        label={<Text size="xl">Автор</Text>}
-        leftSection={<IconUserSquare size="2rem" stroke={1.5} />}
-      />
-      <NavLink
-        to="/test"
-        component={Link}
-        label={<Text size="xl">Лаборатория</Text>}
-        leftSection={<IconMicroscope size="2rem" stroke={1.5} />}
-      />
+      <Tooltip label="Главная" position="right" offset={25}>
+        <NavLink
+          to="/"
+          component={Link}
+          leftSection={<IconHome size="2rem" stroke={1.5} />}
+        />
+      </Tooltip>
+      <Tooltip label="План урока" position="right" offset={25}>
+        <NavLink
+          to="/plan"
+          component={Link}
+          leftSection={<IconChecklist size="2rem" stroke={1.5} />}
+        />
+      </Tooltip>
+      <Tooltip label="Тесты" position="right" offset={25}>
+        <NavLink
+          to="/quiz"
+          component={Link}
+          leftSection={<IconNotes size="2rem" stroke={1.5} />}
+        />
+      </Tooltip>
+      <Tooltip label="Автор" position="right" offset={25}>
+        <NavLink
+          to="/author"
+          component={Link}
+          leftSection={<IconUserSquare size="2rem" stroke={1.5} />}
+        />
+      </Tooltip>
+      <Tooltip label="Лаборатория" position="right" offset={25}>
+        <NavLink
+          to="/lab"
+          component={Link}
+          leftSection={<IconMicroscope size="2rem" stroke={1.5} />}
+        />
+      </Tooltip>
     </>
   );
 };
