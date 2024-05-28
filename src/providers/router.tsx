@@ -1,17 +1,20 @@
 import { Routes, Route } from "react-router-dom";
-import Layout from "../components/layout";
-import Home from "../components/home";
-import Plan from "../components/plan";
-import Quiz from "../components/quiz";
+import Layout from "../components/pages/layout";
+import Home from "../components/pages/home";
+import Plan from "../components/pages/plan";
+import Quiz from "../components/pages/quiz";
+import Lab from "../components/pages/lab";
+import Author from "../components/pages/author";
 
 const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        {/* <Route path="/author" element={<Author />} /> */}
+        <Route path="/lab" element={<Lab />} />
         <Route path="/plan" element={<Plan />} />
         <Route path="/quiz" element={<Quiz />} />
+        <Route path="/author" element={<Author />} />
       </Route>
     </Routes>
   );

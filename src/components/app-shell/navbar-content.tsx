@@ -1,4 +1,4 @@
-import { NavLink, Text, Tooltip } from "@mantine/core";
+import { NavLink, Tooltip } from "@mantine/core";
 import {
   IconChecklist,
   IconHome,

@@ -4,3 +4,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+#btn-quiz {
+  background: #696969;
+  margin-bottom: 10px;
+  padding: 20px;
+  border: 1px solid #424242;
+  width: 100%;
+  background: #2E2E2E;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  border-radius: 4px;
+  user-select: none;
+  font-size: large;
+}
+
+#btn-quiz:hover {
+  background: #3b3b3b;
+}
