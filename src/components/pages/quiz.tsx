@@ -71,7 +71,7 @@ const Quiz = () => {
         <Title style={{ marginBottom: 20 }}>
           Неправильных ответов: {incorrectAnswers}
         </Title>
-        <Button onClick={resetQuiz} fullWidth variant="outline">
+        <Button w="200px" onClick={resetQuiz} fullWidth variant="outline">
           Пройти тест заново
         </Button>
       </div>

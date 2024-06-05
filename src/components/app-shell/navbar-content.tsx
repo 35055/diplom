@@ -46,6 +46,13 @@ const NavbarContent = () => {
           leftSection={<IconMicroscope size="2rem" stroke={1.5} />}
         />
       </Tooltip>
+      {/* <Tooltip label="Лаборатория Вторая" position="right" offset={25}>
+        <NavLink
+          to="/lab2"
+          component={Link}
+          leftSection={<IconMicroscope size="2rem" stroke={1.5} />}
+        />
+      </Tooltip> */}
     </>
   );
 };
